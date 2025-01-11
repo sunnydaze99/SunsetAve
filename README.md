@@ -9,7 +9,7 @@ The main goal is to create a visually appealing and seamless shopping experience
 🔧 Tech Stack
 Here’s what I used to build SunsetAve:
 
-React ⚛️ for the frontend
-Node.js 🟢 (backend logic coming soon)
-CSS/SASS 🎨 for custom styles
+React ⚛️ for the frontend,
+Node.js 🟢 (backend logic coming soon),
+CSS/SASS 🎨 for custom styles,
 Google Cloud Platform (GCP) ☁️ for hosting (Also coming soon)
