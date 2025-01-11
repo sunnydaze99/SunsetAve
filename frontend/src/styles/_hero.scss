@@ -1,0 +1,374 @@
+@import 'variables';
+
+@keyframes panIn {
+    from {
+      opacity: 0;
+      transform: translateX(100px); /* Start 100px to the left */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0); /* Original position */
+    }
+  }
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height minus the taskbar height */
+    padding: $padding-large;
+  }
+  
+  .hero-content {
+    display:contents;
+    justify-content: space-between; /* Text on the left, image on the right */
+    align-items:first baseline;
+    margin-top: 120px;
+    width: 100%;
+    gap: $padding-large;
+  }
+  
+  /* Left Side: Text */
+  .hero-text {
+    flex: 1; /* Allow it to take up one portion of space */
+    display: flex;
+    margin-left: 60px;
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: flex-start; /* Align elements to the left */
+    gap: 15px; /* Space between each text element */
+  }
+
+  .hero-text h1:first-of-type {
+    font-size: 5rem;
+    margin: 0;
+    font-family: 'TheSeasons','Montserrat';
+    color: $primary-color;
+  }
+  
+/* Grouping h2 and span h1 */
+  .heading-group {
+    margin-left: $padding-medium;
+    display: flex; /* Align items horizontally */
+    align-items: baseline; /* Align by text baseline */
+    gap: $padding-medium; /* Space between h2 and the second h1 */
+    margin-top: $padding-small; /* Add spacing between first h1 and heading group */
+  }
+  
+  /* Styling for h2 inside heading group */
+  .heading-group h2 {
+    font-size: 4rem;
+    font-family: 'TheSeasons-Bd-It', 'Montserrat';
+    color: $secondary-color;
+    margin: 0; /* Remove default margin */
+  }
+  
+  /* Styling for span h1 inside heading group */
+  .heading-group span h1 {
+    font-size: 2rem;
+    font-family: 'TheSeasons', 'Montserrat';
+    color: $primary-color;
+    margin: 0; /* Remove default margin */
+  }
+  
+  .hero-text p {
+    font-family: 'Quattrocento', serif;
+    font-size: 1.9rem;
+    margin-top: $padding-small;
+    margin-left: 80px;
+    color: $primary-color;
+  }
+
+  .hero-image img {
+    margin: 0;
+    width: 550px; /* Adjust as needed */
+    height: 550px; /* Same value as width for a perfect circle */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image scales without distortion */
+    border: 5px solid $primary-color; /* Add a border for styling */
+    position:sticky;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    animation: panIn 1.0s ease-out; /* Apply pan-in animation */
+  }
+  
+  .shop-now-button {
+    display: inline-block; /* Allow the button to behave like a block element */
+    text-decoration: none;
+    margin-left: 30%;
+    margin-top: 20px;
+    width: 30%;
+    padding: 20px 20px;
+    background-color: $secondary-color;
+    color: $background-color;
+    border: none;
+    border-radius: 40px;
+    font-family: 'TheSeasons';
+    font-size: 1.6rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .shop-now-button:hover {
+    background-color: $background-color;
+    transform: scale(1.1);
+  }
+  
+  .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Adjust as needed */
+    background-image: url('../Assets/orange_collage_1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: #ffcea5; /* Adjust for readability */
+    text-align: center;
+  
+    .banner-content {
+      background-color: $secondary-color;
+      padding: $padding-medium;
+      border-radius: 10px;
+      font-family: $font-family-secondary;
+    }
+  
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  .best-sellers {
+    padding: 50px 10%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+  
+    .best-sellers-container {
+      display: flex;
+      width: 100%;
+      gap: 50px;
+  
+      /* Left Column: Best Seller Showcase */
+      .best-sellers-showcase {
+        flex: 1;
+  
+        h2 {
+          font-family: 'TheSeasons', sans-serif;
+          font-size: 2.5rem;
+          color: $primary-color;
+          margin-bottom: 20px;
+        }
+  
+        .slideshow {
+          display: flex;
+          align-items: center;
+          position: relative;
+  
+          .prev, .next {
+            background: transparent;
+            border: none;
+            color: $primary-color;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.3s ease, transform 0.2s ease;
+  
+            &:hover {
+              opacity: 1;
+              transform: scale(1.1);
+            }
+          }
+  
+          .slide {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffcea5;
+            border: 2px solid $primary-color;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+  
+            .product-image-placeholder {
+              width: 100%;
+              height: 300px;
+              background-color: #e0e0e0;
+              border-radius: 5px;
+              margin-bottom: 15px;
+              position: relative;
+              overflow: hidden;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Ensures the image scales properly */
+                filter: grayscale(100%); /* Makes the image grayscale */
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                opacity: 0.75;                
+                &:hover {
+                  // transform: scale(1.1); /* Enlarges the image on hover */
+                  background: darken($background-color, 10%);
+                  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Adds a shadow on hover */
+                }
+              }
+
+              .overlay-message {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: $secondary-color;
+                font-size: 1.9rem;
+                line-height: 1.5; 
+                font-family: 'Gladolia-reg','TheSeasons', sans-serif;
+                padding: 10px 15px;
+                border-radius: 5px;
+                text-align: center;
+                pointer-events: none;
+                z-index: 1;
+                background: darken($background-color, 10%);
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+                animation: grow 2s infinite;
+              }
+              
+              @keyframes grow {
+                0% {
+                  transform: translate(-50%, -50%) scale(1); /* Original size */
+                }
+                50% {
+                  transform: translate(-50%, -50%) scale(1.05); /* Slightly larger */
+                }
+                100% {
+                  transform: translate(-50%, -50%) scale(1); /* Back to original size */
+                }
+              }
+
+            }
+  
+            h3 {
+              font-family: 'TheSeasons', sans-serif;
+              font-size: 1.8rem;
+              color: $primary-color;
+            }
+  
+            p {
+              font-family: 'Quattrocento', sans-serif;
+              font-size: 1.2rem;
+              color: $secondary-color;
+            }
+  
+            .coming-soon {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              background-color: $secondary-color;
+              color: #fff;
+              font-size: 1.3rem;
+              padding: 5px 10px;
+              border-radius: 5px;
+              font-family: 'TheSeasons', sans-serif;
+            }
+          }
+        }
+      }
+  
+      /* Right Column: Pinterest Collage */
+      .pinterest-collage {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+  
+        h2 {
+          font-family: 'TheSeasons', sans-serif;
+          font-size: 2.5rem;
+          color: $primary-color;
+          margin-bottom: 5px;
+        }
+
+        p {
+          font-family: $font-family-secondary;
+          font-size: 1.2rem;
+          margin-bottom: 20px;
+          color: $primary-color;
+          text-align: center;
+        }
+  
+  
+        .collage-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+          width: 100%;
+          margin-bottom: 20px;
+          position: relative;
+  
+          .tile {
+            overflow: hidden;
+            height: 150px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: 'Quattrocento', sans-serif;
+            color: $primary-color;
+            font-size: 1rem;
+            position: relative;
+            cursor: pointer;
+            // transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1; /* default */
+
+            &:hover {
+              overflow: visible;
+              // transform: scale(1.1); /* Slight growth effect */
+              box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+              z-index: 3;
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover; /* Ensures image fits card dimensions */
+              transition: transform 0.3s ease; /* Smooth scaling effect */
+      
+              &:hover {
+                width: 83%;
+                height: 83%;
+                overflow: visible;
+                transform: scale(1.2); /* Image grows slightly larger */
+                transition: transform 0.3s ease; /* Ensure smooth transition */
+              }
+            }
+            
+          }
+        }
+  
+        .pinterest-button {
+          background-color: $primary-color;
+          color: #ffcea5;
+          border: none;
+          font-family: 'TheSeasons', sans-serif;
+          font-size: 1.2rem;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+  
+          &:hover {
+            background-color: $secondary-color;
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+  
