@@ -13,3 +13,9 @@ React ⚛️ for the frontend,
 Node.js 🟢 (backend logic coming soon),
 CSS/SASS 🎨 for custom styles,
 Google Cloud Platform (GCP) ☁️ for hosting (Also coming soon)
+
+## 🎥 Demo Video
+
+Check out the demo video below:
+
+[![SunsetAve Demo](https://github.com/sunnydaze99/SunsetAve/blob/main/demo/SunsetAve-Thumbnail.png)](https://www.loom.com/share/e9d116291c434e5babd7e3df0f139166?sid=5cfa9e70-ab9d-407e-bc64-ecab1af71ea2)
